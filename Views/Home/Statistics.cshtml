@@ -1,0 +1,27 @@
+﻿
+@model IEnumerable<WebApplication_Oltean_Cristina.Models.RestaurantViewModels.OrderGroup>
+@{
+    ViewData["Name"] = "Ordered Foods Statistics";
+}
+<h2>Ordered Foods Statistics</h2>
+<table>
+    <tr>
+        <th>
+            Order Date
+        </th>
+        <th>
+            Ordered Foods
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @item.FoodCount
+            </td>
+        </tr>
+    }
+</table>
